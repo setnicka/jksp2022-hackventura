@@ -53,7 +53,15 @@ type targetS struct {
 // const baseDomain = "setnicka.cz:8080"
 const baseDomain = "localhost:8080"
 
-var targets = []targetS{}
+var targets = []targetS{
+	{Code: "cia", Name: "CIA", URL: "cia." + baseDomain, Router: ciaRouter},
+	{Code: "nsa", Name: "NSA", URL: "nsa." + baseDomain, Router: nsaRouter},
+	{Code: "kgb", Name: "KGB", URL: "kgb." + baseDomain, Router: kgbRouter},
+	{Code: "fbi", Name: "FBI", URL: "fbi." + baseDomain, Router: fbiRouter},
+	{Code: "ppl", Name: "PPL", URL: "ppl." + baseDomain, Router: pplRouter},
+	{Code: "bis", Name: "BIS", URL: "bis." + baseDomain, Router: bisRouter},
+	{Code: "mi5", Name: "MI5", URL: "mi5." + baseDomain, Router: mi5Router},
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 

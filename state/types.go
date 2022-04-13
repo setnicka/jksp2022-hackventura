@@ -27,13 +27,16 @@ type Team struct {
 	Name   string
 	Login  string
 	Passwd []byte // hashed by bcrypt
-	CIA    ResultCIA
-	NSA    ResultNSA
-	KGB    ResultKGB
-	FBI    ResultFBI
-	PPL    ResultPPL
-	BIS    ResultBIS
-	MI5    ResultMI5
+	Moria  ResultMoria
+
+	// Old, to recycle
+	CIA ResultCIA
+	NSA ResultNSA
+	KGB ResultKGB
+	FBI ResultFBI
+	PPL ResultPPL
+	BIS ResultBIS
+	MI5 ResultMI5
 }
 
 type result struct {
@@ -43,6 +46,11 @@ type result struct {
 }
 
 // Results for different hack pages
+
+type ResultMoria struct {
+	result
+	RightAnswers int
+}
 
 type ResultCIA struct {
 	result

@@ -152,7 +152,7 @@ func orgDashboardGet(w http.ResponseWriter, r *http.Request) {
 
 type orgSettingsData struct {
 	GeneralData
-	DolGuldor []state.DolGuldurPassword
+	Gundabad []state.GundabadPassword
 }
 
 func orgSettingsGet(w http.ResponseWriter, r *http.Request) {
@@ -161,7 +161,7 @@ func orgSettingsGet(w http.ResponseWriter, r *http.Request) {
 
 	data := orgSettingsData{
 		GeneralData: getGeneralData("Nastavení", w, r),
-		DolGuldor:   server.state.GetDolGuldurPasswords(),
+		Gundabad:    server.state.GetGundabadPasswords(),
 	}
 
 	executeTemplate(w, "orgSettings", data)
@@ -178,9 +178,9 @@ func orgSettingsPost(w http.ResponseWriter, r *http.Request) {
 	server.state.Lock()
 	defer server.state.Unlock()
 
-	if r.PostFormValue("dolGuldorPassword") != "" {
-		password := r.PostFormValue("dolGuldorPassword")
-		if err := server.state.SetDolGuldurPassword(password); err != nil {
+	if r.PostFormValue("gundabadPassword") != "" {
+		password := r.PostFormValue("gundabadPassword")
+		if err := server.state.SetGundabadPassword(password); err != nil {
 			setFlashMessage(w, r, messageError, "Chyba při nastavování hesla: %v", err)
 		} else {
 			setFlashMessage(w, r, messageOk, "Nové heslo nastaveno")

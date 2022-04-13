@@ -72,14 +72,14 @@ func (s *State) Save() error {
 ////////////////////////////////////////////////////////////////////////////////
 // global state handlers
 
-// SetDolGuldurPassword appends a new password for Dol Guldur (and save the state)
-func (s *State) SetDolGuldurPassword(password string) error {
-	s.Global.DolGuldur = append(s.Global.DolGuldur, DolGuldurPassword{Password: password, From: time.Now()})
+// SetGundabadPassword appends a new password for Dol Guldur (and save the state)
+func (s *State) SetGundabadPassword(password string) error {
+	s.Global.Gundabad = append(s.Global.Gundabad, GundabadPassword{Password: password, From: time.Now()})
 	return s.Save()
 }
 
-// GetDolGuldurPasswords returns all passwords for Dol Guldur, valid one is the
+// GetGundabadPasswords returns all passwords for Dol Guldur, valid one is the
 // last one
-func (s *State) GetDolGuldurPasswords() []DolGuldurPassword {
-	return s.Global.DolGuldur
+func (s *State) GetGundabadPasswords() []GundabadPassword {
+	return s.Global.Gundabad
 }

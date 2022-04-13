@@ -134,6 +134,8 @@ func orgDashboardGet(w http.ResponseWriter, r *http.Request) {
 	for _, team := range server.state.Teams {
 		res := teamResult{team.Name, []teamServiceResult{
 			{team.Moria.Completed, team.Moria.CompletedTime.Format("15:04:05"), team.Moria.Tries},
+			{team.Gundabad.Completed, team.Gundabad.CompletedTime.Format("15:04:05"), team.Gundabad.Tries},
+
 			{team.CIA.Completed, team.CIA.CompletedTime.Format("15:04:05"), team.CIA.Tries},
 			{team.NSA.Completed, team.NSA.CompletedTime.Format("15:04:05"), team.NSA.Tries},
 			{team.KGB.Completed, team.KGB.CompletedTime.Format("15:04:05"), team.KGB.Tries},

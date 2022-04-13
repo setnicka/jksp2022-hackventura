@@ -14,20 +14,21 @@ type State struct {
 }
 
 type globalState struct {
-	DolGuldur []DolGuldurPassword
+	Gundabad []GundabadPassword
 }
 
-type DolGuldurPassword struct {
+type GundabadPassword struct {
 	Password string
 	From     time.Time
 }
 
 // Team holds teams login inforation and game state for it
 type Team struct {
-	Name   string
-	Login  string
-	Passwd []byte // hashed by bcrypt
-	Moria  ResultMoria
+	Name     string
+	Login    string
+	Passwd   []byte // hashed by bcrypt
+	Moria    ResultMoria
+	Gundabad ResultGundabad
 
 	// Old, to recycle
 	CIA ResultCIA
@@ -51,6 +52,8 @@ type ResultMoria struct {
 	result
 	RightAnswers int
 }
+
+type ResultGundabad result
 
 type ResultCIA struct {
 	result

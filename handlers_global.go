@@ -51,7 +51,7 @@ func loginGetHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	data := getGeneralData("Poštovní hackovací proxy", w, r)
+	data := getGeneralData("Přihlášení týmu", w, r)
 	executeTemplate(w, "login", data)
 }
 

@@ -29,11 +29,11 @@ type Team struct {
 	Passwd   []byte // hashed by bcrypt
 	Moria    ResultMoria
 	Gundabad ResultGundabad
+	Roklinka ResultRoklinka
 
 	// Old, to recycle
 	CIA ResultCIA
 	NSA ResultNSA
-	KGB ResultKGB
 	FBI ResultFBI
 	PPL ResultPPL
 	BIS ResultBIS
@@ -54,6 +54,7 @@ type ResultMoria struct {
 }
 
 type ResultGundabad result
+type ResultRoklinka result
 
 type ResultCIA struct {
 	result
@@ -61,7 +62,6 @@ type ResultCIA struct {
 }
 
 type ResultNSA result
-type ResultKGB result
 type ResultFBI result
 type ResultPPL struct {
 	result

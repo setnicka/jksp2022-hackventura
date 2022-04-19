@@ -56,10 +56,10 @@ const baseDomain = "localhost:8080"
 var targets = []targetS{
 	{Code: "moria", Name: "Mórie", URL: "moria." + baseDomain, Router: moriaRouter},
 	{Code: "gundabad", Name: "Gundabad", URL: "gundabad." + baseDomain, Router: gundabadRouter},
+	{Code: "roklinka", Name: "Roklinka", URL: "roklinka." + baseDomain, Router: roklinkaRouter},
 
 	{Code: "cia", Name: "CIA", URL: "cia." + baseDomain, Router: ciaRouter},
 	{Code: "nsa", Name: "NSA", URL: "nsa." + baseDomain, Router: nsaRouter},
-	{Code: "kgb", Name: "KGB", URL: "kgb." + baseDomain, Router: kgbRouter},
 	{Code: "fbi", Name: "FBI", URL: "fbi." + baseDomain, Router: fbiRouter},
 	{Code: "ppl", Name: "PPL", URL: "ppl." + baseDomain, Router: pplRouter},
 	{Code: "bis", Name: "BIS", URL: "bis." + baseDomain, Router: bisRouter},

@@ -135,10 +135,10 @@ func orgDashboardGet(w http.ResponseWriter, r *http.Request) {
 		res := teamResult{team.Name, []teamServiceResult{
 			{team.Moria.Completed, team.Moria.CompletedTime.Format("15:04:05"), team.Moria.Tries},
 			{team.Gundabad.Completed, team.Gundabad.CompletedTime.Format("15:04:05"), team.Gundabad.Tries},
+			{team.Roklinka.Completed, team.Roklinka.CompletedTime.Format("15:04:05"), team.Roklinka.Tries},
 
 			{team.CIA.Completed, team.CIA.CompletedTime.Format("15:04:05"), team.CIA.Tries},
 			{team.NSA.Completed, team.NSA.CompletedTime.Format("15:04:05"), team.NSA.Tries},
-			{team.KGB.Completed, team.KGB.CompletedTime.Format("15:04:05"), team.KGB.Tries},
 			{team.FBI.Completed, team.FBI.CompletedTime.Format("15:04:05"), team.FBI.Tries},
 			{team.PPL.Completed, team.PPL.CompletedTime.Format("15:04:05"), team.PPL.Tries},
 			{team.BIS.Completed, team.BIS.CompletedTime.Format("15:04:05"), team.BIS.Tries},

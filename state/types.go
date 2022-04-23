@@ -30,6 +30,7 @@ type Team struct {
 	Moria    ResultMoria
 	Gundabad ResultGundabad
 	Roklinka ResultRoklinka
+	Erebor   ResultErebor
 
 	// Old, to recycle
 	CIA ResultCIA
@@ -55,6 +56,7 @@ type ResultMoria struct {
 
 type ResultGundabad result
 type ResultRoklinka result
+type ResultErebor result
 
 type ResultCIA struct {
 	result

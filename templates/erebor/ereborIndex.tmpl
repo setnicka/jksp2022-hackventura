@@ -1,0 +1,160 @@
+{{ define "ereborIndex" }}
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	EreborBank
+</title><link href="/static/Css/StyleSheet.css" rel="stylesheet" type="text/css" media="all" /><link href="/static/Css/general.css" rel="stylesheet" type="text/css" media="all" /><link href="/static/Css/print.css" rel="stylesheet" type="text/css" media="print" /><link rel="shortcut icon" href="/static/App_Images/favicon-16x16.ico" type="image/x-icon" /><link rel="icon" href="/static/App_Images/favicon.png" type="image/x-icon" /><meta content="/static/App_Images/favicon-128.html" />
+</head>
+<body{{ if eq .MessageType "success" }} class="success"{{ end }}>
+    <form id="form1" method="POST">
+        <div id="topShadow">
+            <div id="topMenu">
+                <div class="container">
+                    <div id="utils">
+							{{ if eq .MessageType "success" }}
+							<h2 id="success">Přístup povolen</h2>
+							{{ else }}
+							{{ if eq .Message "" }}{{ else }}<div id="message">{{ .Message }}</div>{{ end }}
+                        <div id="searchForm">
+                            <input name="login" type="text" placeholder="jméno" />
+                            <input name="password" type="password" placeholder="heslo" />
+							<button>Přihlásit se</button>
+							{{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- topMenu -->
+            <div class="container">
+                <a id="logo" title="na úvodní stránku"></a>
+                <h4 id="logoName">EreborBank</h4>
+                <h5 id="logoLabel">Banka inspirovaná zlatem</h5>
+            </div>
+						{{ if eq .MessageType "success" }} {{ else }}
+            <div id="homeBanner">
+                <div id="banners">
+                    <div class="banner">
+                        <img src="/static/App_Images/photo-1.jpg" alt="ilustrační foto 1" />
+                    </div>
+                </div>
+            </div>
+            <div id="menuContainer">
+                <div class="container">
+                    <div id="menu">
+                        <a class="active">Domů</a>
+                        <a>O nás</a>
+                        <a>Ceník</a>
+                        <a>Erebor-broker</a>
+                        <a>Kontakty</a>
+                    </div>
+                </div>
+            </div>
+            <!-- menuContainer -->
+            <div>
+                
+    <div class="container">
+        
+        <h1 id="ContentPlaceHolder1_hAktualne">Nab&iacute;zen&aacute; spořen&iacute;</h1>
+        <div id="text">
+            <div id="ContentPlaceHolder1_divArticle01" class="article">
+                <div class="aText">
+                    <h2><a id="ContentPlaceHolder1_aAktualne01" title="zobrazit více"></a>Stavebn&iacute; spořen&iacute;</h2>
+                    <table>
+                        <tr>
+                            
+                            <td style="width: 100%; vertical-align: top;">
+                                <div id="ContentPlaceHolder1_decsriptionAktualne01">Chcete si poř&iacute;dit nov&eacute; bydlen&iacute;, protože v&aacute;m skřeti zdemolovali to star&eacute;?
+Nemějte strach, s n&aacute;mi je to hračka. Když n&aacute;m d&aacute;te v&scaron;echno sv&eacute; zlato, my se postar&aacute;me o zbytek!</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cleaner"></div>
+                <a id="ContentPlaceHolder1_hrefAktualne01" class="btn">Chci spořit</a>
+            </div>
+            <!-- article -->
+            <div id="ContentPlaceHolder1_divArticle02" class="article">
+                <div class="aText">
+                    <h2><a id="ContentPlaceHolder1_aAktualne02" title="zobrazit více"></a>Demoličn&iacute; spořen&iacute;</h2>
+                    <table>
+                        <tr>
+                            
+                            <td style="width: 100%; vertical-align: top;">
+                                <div id="ContentPlaceHolder1_decsriptionAktualne02">Chcete si poř&iacute;dit nov&eacute; bydlen&iacute;, ale skřeti v&aacute;m je&scaron;tě nezdemolovali to star&eacute;?
+M&aacute;te strach, že se sv&eacute; star&eacute; chatrče snad nikdy nezbav&iacute;te?
+I když se bour&aacute;n&iacute; bar&aacute;ku může zd&aacute;t jako nedostupn&aacute; z&aacute;ležitost, my v&aacute;m s t&iacute;m pomůžeme.
+Stač&iacute; si sv&eacute; &uacute;spory uložit u n&aacute;s!</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cleaner"></div>
+                <a id="ContentPlaceHolder1_hrefAktualne02" class="btn">Chci spořit</a>
+            </div>
+            <!-- article -->
+            <div id="ContentPlaceHolder1_divArticle03" class="article">
+                <div class="aText">
+                    <h2><a id="ContentPlaceHolder1_aAktualne03" title="zobrazit více">Chytr&eacute; spořen&iacute;</a></h2>
+                    <table>
+                        <tr>
+                            
+                            <td style="width: 100%; vertical-align: top;">
+                                <div id="ContentPlaceHolder1_decsriptionAktualne03">Nechcete si pořizovat nov&eacute; bydlen&iacute;? Nevad&iacute;! I tak můžete spořit.</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cleaner"></div>
+                <a id="ContentPlaceHolder1_hrefAktualne03" class="btn">Chci spořit</a>
+            </div>
+            <!-- article -->
+            <br />
+            <a class="more">zobrazit další spoření</a>
+        </div>
+        <!-- text -->
+    </div>
+            </div>
+            <div id="footer">
+                <div class="container">
+                    <div id="footerText">
+                        <h5>EreborBank</h5>
+                        <h6>Banka inspirovaná zlatem</h6>
+                        <div class="footerCol1">
+                            Osamělá hora<br />
+                            Středozemě
+                        </div>
+                        <div class="footerCol2">
+                            tel: +420 123 456 789<br />
+                            Dr. A.K. Dráček Šmáček
+                        </div>
+                        <div class="footerCol3">
+                            <a>dracek.smacek@erebor.sz</a><br />
+                            <a>www.erebor.sz</a>
+                        </div>
+                        <div class="cleaner"></div>
+                        <div id="notice">Tento web splňuje <a>pravidla přístupnosti</a>.</div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+        </div>
+        <!-- topShadow -->
+        <div id="null">
+            <a id="appOffline" style="visibility: hidden;">_app_offline.htm</a>
+            <a id="appProhlizecChyba" style="visibility: hidden;">prohlizec-chyba.htm</a>
+            <a id="appSiteMap" style="visibility: hidden;">sitemap.xml</a>
+            <a id="appRobots" style="visibility: hidden;">robots.txt</a>
+            <a id="appRss" style="visibility: hidden;">rss-feed.xml</a>
+            <a id="appRss2" style="visibility: hidden;">rss-feed.html</a>
+            <a id="appHtaccess" style="visibility: hidden;">.htaccess</a>
+            <a id="appGoogleSiteVerification" style="visibility: hidden;">googleb525cc5392a69337.html</a>
+        {{ end }}
+        </div>
+    </form>
+</body>
+
+ 
+</html>
+{{ end }}

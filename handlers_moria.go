@@ -21,8 +21,8 @@ var moriaQuestions = []moriaQuestion{
 	{"Vyslov jméno sekery slavného Gimliho trpaslíka", "drtihlavka"},
 	{"Jmenuj nápoj jež nejoblíbenější Elrondův jest", "miruvor"},
 	{"Jaká je průměrná odpovědní doba enta?", "semestr"},
-	{"Pátá otázka", "aaa"},
-	{"Šestá otázka", "bbb"},
+	{"Jaký je Šmáčkův roční obrat v pytlech zlata", "257"},
+	{"Kolik let je hospodskému z Hůrky", "37.856"},
 }
 
 var moriaFinalURL = "/" + url.PathEscape("khazad-dûm")
@@ -89,8 +89,10 @@ func moriaIndexPost(w http.ResponseWriter, r *http.Request) {
 
 	answer := r.PostFormValue("answer")
 	log.Infof("[Moria - %s] Trying answer '%s' to question %d", team.Login, answer, team.Moria.RightAnswers)
+	// normalization
+	answer = strings.ToLower(strings.Replace(answer, ",", ".", 1))
 
-	if strings.ToLower(answer) == strings.ToLower(moriaQuestions[team.Moria.RightAnswers].Answer) {
+	if answer == strings.ToLower(moriaQuestions[team.Moria.RightAnswers].Answer) {
 		log.Infof("[Moria - %s] Right answer to question %d", team.Login, team.Moria.RightAnswers)
 		team.Moria.RightAnswers++
 

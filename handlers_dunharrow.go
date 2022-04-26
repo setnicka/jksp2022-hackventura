@@ -58,7 +58,7 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 	// e.F.g.H.i.J
 
 	password := r.PostFormValue("password")
-	log.Infof("[Dunharrow - %s] Trying login '%s' and password '%s'", team.Login, password)
+	log.Infof("[Dunharrow - %s] Trying password '%s'", team.Login, password)
 
 	if len(password) < 11 {
 		setFlashMessage(w, r, messageError, "Tvé kouzlo bylo příliš slabé, aby prolomilo kletbu. Možná zafunguje nějaké s více znaky.")
@@ -145,7 +145,7 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	// heslo má moc znaků ze Saurona
-	if sauronLetters > 1 {
+	if sauronLetters > 0 {
 		setFlashMessage(w, r, messageError, "I když už je Sauron mrtvý, jeho jméno stále vyvolává strach. Jelikož tvé kouzlo obsahuje příliš mnoho znaků z jeho jména, měl jsi při kouzlení děs v očích a kouzlo se nepovedlo.")
 		return
 	}

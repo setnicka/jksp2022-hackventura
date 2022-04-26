@@ -58,6 +58,7 @@ var targets = []targetS{
 	{Code: "gundabad", Name: "Gundabad", URL: "gundabad." + baseDomain, Router: gundabadRouter},
 	{Code: "roklinka", Name: "Roklinka", URL: "roklinka." + baseDomain, Router: roklinkaRouter},
 	{Code: "erebor", Name: "Erebor", URL: "erebor." + baseDomain, Router: ereborRouter},
+	{Code: "dunharrow", Name: "Dunharrow", URL: "dunharrow." + baseDomain, Router: dunharrowRouter},
 
 	{Code: "cia", Name: "CIA", URL: "cia." + baseDomain, Router: ciaRouter},
 	{Code: "nsa", Name: "NSA", URL: "nsa." + baseDomain, Router: nsaRouter},

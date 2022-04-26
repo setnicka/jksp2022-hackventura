@@ -24,13 +24,14 @@ type GundabadPassword struct {
 
 // Team holds teams login inforation and game state for it
 type Team struct {
-	Name     string
-	Login    string
-	Passwd   []byte // hashed by bcrypt
-	Moria    ResultMoria
-	Gundabad ResultGundabad
-	Roklinka ResultRoklinka
-	Erebor   ResultErebor
+	Name      string
+	Login     string
+	Passwd    []byte // hashed by bcrypt
+	Moria     ResultMoria
+	Gundabad  ResultGundabad
+	Roklinka  ResultRoklinka
+	Erebor    ResultErebor
+	Dunharrow ResultDunharrow
 
 	// Old, to recycle
 	CIA ResultCIA
@@ -59,6 +60,11 @@ type ResultRoklinka result
 type ResultErebor result
 
 type ResultCIA struct {
+	result
+	LastTry time.Time
+}
+
+type ResultDunharrow struct {
 	result
 	LastTry time.Time
 }

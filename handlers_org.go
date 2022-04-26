@@ -136,6 +136,8 @@ func orgDashboardGet(w http.ResponseWriter, r *http.Request) {
 			{team.Moria.Completed, team.Moria.CompletedTime.Format("15:04:05"), team.Moria.Tries},
 			{team.Gundabad.Completed, team.Gundabad.CompletedTime.Format("15:04:05"), team.Gundabad.Tries},
 			{team.Roklinka.Completed, team.Roklinka.CompletedTime.Format("15:04:05"), team.Roklinka.Tries},
+			{team.Erebor.Completed, team.Erebor.CompletedTime.Format("15:04:05"), team.Erebor.Tries},
+			{team.Dunharrow.Completed, team.Dunharrow.CompletedTime.Format("15:04:05"), team.Dunharrow.Tries},
 
 			{team.CIA.Completed, team.CIA.CompletedTime.Format("15:04:05"), team.CIA.Tries},
 			{team.NSA.Completed, team.NSA.CompletedTime.Format("15:04:05"), team.NSA.Tries},

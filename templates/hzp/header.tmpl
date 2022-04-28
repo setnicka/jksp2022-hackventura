@@ -1,0 +1,187 @@
+{{ define "hzpHeader" }}
+<!DOCTYPE html>
+<html dir="ltr" lang="cs">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+
+  <link rel="stylesheet" type="text/css" href="/static/hzp_style.css">
+
+  <script src="/static/jquery.min.js"></script>
+
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    article p {
+      text-align: justify;
+    }
+
+    .message {
+      padding: 5px;
+      text-align: center;
+    }
+
+    .message-danger {
+      background-color: red;
+      color: white;
+    }
+
+    .message-success {
+      background-color: green;
+    }
+
+    .homeTop .homeSlide__item {
+      width: 900px;
+      height: 520px;
+      position: absolute;
+      left: 0px;
+      opacity: 0;
+      transition: opacity 500ms ease 0s;
+    }
+    .homeTop .homeSlide__item.slick-active {
+      opacity: 1;
+      z-index: 50;
+    }
+    .homeTop .homeSlide__text {
+      bottom: 0px;
+    }
+  </style>
+</head>
+
+<body class="uvodni-stranka" cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="8.897.0" data-gr-ext-installed="">
+<div class="container">
+<header class="header">
+  <div class="header__top">
+    <nav class="header__top__nav">
+
+      <span class="info-popup">O nás</span>
+      <span class="info-popup__info hidden" style="padding: 30px;">
+        <a href="#" class="info-popup__close" marked="1">
+            <img src="static/img/close.svg" alt="zavřít popup" width="21" height="21">
+        </a>
+        Hobití Zdravotní pojišťovna je tu s vámi už více než 1200 let.
+      </span>
+
+      <span class="info-popup">
+        <svg class="ico ico--email"><use xlink:href="/static/img/sprite.svg#email"></use></svg>
+        Kontakt
+      </span>
+      <span class="info-popup__info hidden" style="padding: 30px;">
+        <a href="#" class="info-popup__close" marked="1">
+            <img src="static/img/close.svg" alt="zavřít popup" width="21" height="21">
+        </a>
+        Vršek pytle 17, Hobitín, Kraj
+      </span>
+
+      <span class="info-popup">
+        <svg class="ico ico--phone"><use xlink:href="/static/img/sprite.svg#phone"></use></svg> Infolinka
+      </span>
+      <span class="info-popup__info hidden">
+          <a href="#" class="info-popup__close" marked="1">
+              <img src="static/img/close.svg" alt="zavřít popup" width="21" height="21">
+          </a>
+          <span class="info-popup__item">
+              <img src="static/img/tel.svg" alt="">
+              <a marked="1">
+                  <font color="#E95089">*** *** ***</font>
+              </a>
+              <p>Právě probíhá optimalizace telefonních linek, <strong>slučujeme</strong> naši telefonní linku s <strong>Linkou pomoci osamělým hobitům</strong>.</p>
+              <p style="color: red;">Telefonní číslo je v současné době nefunkční.</p>
+          </span>
+          <span class="info-popup__item">
+              <img src="static/img/tel.svg" alt="">
+              <a marked="1">
+                  <font color="#05C5DB">*** *** ***</font>
+              </a>
+              <p>Hned jak bude linka spuštěna, dozvíte se její číslo nejrychleji ve veřejných hobitích sdělovacích prostředcích.</p>
+              <p>Upozorňujeme, že tyto stránky jsou aktualizovány jednou denně a tudíž nemusí obsahovat aktuální informace.</p>
+          </span>
+      </span>
+    </nav><!--//header__top__nav-->
+  </div><!--//header__top-->
+
+  <div class="header__main">
+    <a href="/" class="header__main__logo" marked="1">
+      <img src="static/img/hzp_logo.png" style="height: auto;" alt="HZP – Hobití Zdravotní Pojišťovna" id="header_logo"><span class="hidden">HZP – Hobití Zdravotní Pojišťovna</span>
+    </a>
+    <nav class="header__main__nav">
+      <ul>
+        <li class="pojistenec"><a href="#" marked="1">Pojištěnci</a></li>
+        <li class="platce"><a href="#" marked="1">Plátci</a></li>
+        <li class="poskytovatel"><a href="#" marked="1">Poskytovatelé</a></li>
+      </ul>
+    </nav><!--//header__main__nav-->
+
+
+  <div class="header__main__btn">
+  {{ if .Completed }}
+    <span style="color: white;">Přihlášen:<br>{{ .Name }}</span>
+    <a href="/moje-hzp" class="eKomunikace btnText btnText--secound" marked="1">Moje-HZP</a>
+  {{ else }}
+
+    <a href="#" class="eKomunikace btnText btnText--secound info-popup" marked="1">Přihlášení do interního systému</a>
+      <span class="info-popup__info hidden">
+        <a href="#" class="info-popup__close" marked="1">
+            <img src="static/img/close.svg" alt="zavřít popup" width="21" height="21">
+        </a>
+        <span class="info-popup__item">
+            <img src="static/img/password.jpg" alt="">
+        </span>
+        <span class="info-popup__item">
+            <p>Pro přihlášení uveďte číslo svého hobitího průkazu a heslo.</p>
+            <form method="post">
+              <input type="text" name="login" placeholder="Číslo hobitího průkazu">
+              <input type="password" name="password" placeholder="Heslo">
+              <input type="submit" value="Přihlásit">
+            </form>
+        </span>
+      </span>
+
+  {{ end }}
+  </div><!--//header__main__btn-->
+
+    <div class="headerResp__icons">
+      <span class="info-popup">
+        <svg class="ico ico--phone"><use xlink:href="/static/img/sprite.svg#phone-resp"></use></svg>
+      </span>
+      <span class="info-popup__info hidden">
+          <a href="#" class="info-popup__close" marked="1">
+              <img src="static/img/close.svg" alt="zavřít popup" width="21" height="21">
+          </a>
+          <span class="info-popup__item">
+            <img src="static/img/tel.svg" alt="">
+            <a marked="1">
+                <font color="#E95089">*** *** ***</font>
+            </a>
+            <p>Právě probíhá optimalizace telefonních linek, <strong>slučujeme</strong> naši telefonní linku s <strong>Linkou pomoci osamělým hobitům</strong>.</p>
+            <p style="color: red;">Telefonní číslo je v současné době nefunkční.</p>
+          </span>
+          <span class="info-popup__item">
+              <img src="static/img/tel.svg" alt="">
+              <a marked="1">
+                  <font color="#05C5DB">*** *** ***</font>
+              </a>
+              <p>Hned jak bude linka spuštěna, dozvíte se její číslo nejrychleji ve veřejných hobitích sdělovacích prostředcích.</p>
+              <p>Upozorňujeme, že tyto stránky jsou aktualizovány jednou denně a tudíž nemusí obsahovat aktuální informace.</p>
+          </span>
+      </span>
+      <a href="#" class="headerResp__icons__nav" marked="1"><span><span></span></span></a>
+    </div>
+  </div><!--//header__main-->
+
+</header><!--//header-->
+{{ if .Message }}
+  <div class="message message-{{ .MessageType }}">
+    {{ .Message }}
+  </div>
+{{ end }}
+
+</div><!--//container-->
+{{ end }}

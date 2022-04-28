@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"io/fs"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -32,7 +31,7 @@ func executeTemplate(w http.ResponseWriter, templateName string, data interface{
 // then return these loaded templates.
 func (s *Server) getTemplates() (*template.Template, error) {
 	templateFiles := []string{}
-	err := filepath.Walk(templatesDir, func(path string, info fs.FileInfo, err error) error {
+	err := filepath.Walk(templatesDir, func(path string, info os.FileInfo, err error) error {
 		if filepath.Ext(path) == ".tmpl" {
 			templateFiles = append(templateFiles, path)
 		}

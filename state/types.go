@@ -33,14 +33,6 @@ type Team struct {
 	Erebor    ResultErebor
 	Dunharrow ResultDunharrow
 	HZP       ResultHZP
-
-	// Old, to recycle
-	CIA ResultCIA
-	NSA ResultNSA
-	FBI ResultFBI
-	PPL ResultPPL
-	BIS ResultBIS
-	MI5 ResultMI5
 }
 
 type result struct {
@@ -60,22 +52,7 @@ type ResultGundabad result
 type ResultRoklinka result
 type ResultErebor result
 type ResultHZP result
-
-type ResultCIA struct {
-	result
-	LastTry time.Time
-}
-
 type ResultDunharrow struct {
 	result
 	LastTry time.Time
 }
-
-type ResultNSA result
-type ResultFBI result
-type ResultPPL struct {
-	result
-	PackagesTracked int
-}
-type ResultBIS result
-type ResultMI5 result

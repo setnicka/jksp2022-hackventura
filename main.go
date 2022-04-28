@@ -60,13 +60,6 @@ var targets = []targetS{
 	{Code: "erebor", Name: "Erebor", URL: "erebor." + baseDomain, Router: ereborRouter},
 	{Code: "dunharrow", Name: "Dunharrow", URL: "dunharrow." + baseDomain, Router: dunharrowRouter},
 	{Code: "hzp", Name: "HZP", URL: "hzp." + baseDomain, Router: hzpRouter},
-
-	{Code: "cia", Name: "CIA", URL: "cia." + baseDomain, Router: ciaRouter},
-	{Code: "nsa", Name: "NSA", URL: "nsa." + baseDomain, Router: nsaRouter},
-	{Code: "fbi", Name: "FBI", URL: "fbi." + baseDomain, Router: fbiRouter},
-	{Code: "ppl", Name: "PPL", URL: "ppl." + baseDomain, Router: pplRouter},
-	{Code: "bis", Name: "BIS", URL: "bis." + baseDomain, Router: bisRouter},
-	{Code: "mi5", Name: "MI5", URL: "mi5." + baseDomain, Router: mi5Router},
 }
 
 ////////////////////////////////////////////////////////////////////////////////

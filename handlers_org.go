@@ -139,13 +139,6 @@ func orgDashboardGet(w http.ResponseWriter, r *http.Request) {
 			{team.Erebor.Completed, team.Erebor.CompletedTime.Format("15:04:05"), team.Erebor.Tries},
 			{team.Dunharrow.Completed, team.Dunharrow.CompletedTime.Format("15:04:05"), team.Dunharrow.Tries},
 			{team.HZP.Completed, team.HZP.CompletedTime.Format("15:04:05"), team.HZP.Tries},
-
-			{team.CIA.Completed, team.CIA.CompletedTime.Format("15:04:05"), team.CIA.Tries},
-			{team.NSA.Completed, team.NSA.CompletedTime.Format("15:04:05"), team.NSA.Tries},
-			{team.FBI.Completed, team.FBI.CompletedTime.Format("15:04:05"), team.FBI.Tries},
-			{team.PPL.Completed, team.PPL.CompletedTime.Format("15:04:05"), team.PPL.Tries},
-			{team.BIS.Completed, team.BIS.CompletedTime.Format("15:04:05"), team.BIS.Tries},
-			{team.MI5.Completed, team.MI5.CompletedTime.Format("15:04:05"), team.MI5.Tries},
 		}}
 		data.Teams = append(data.Teams, res)
 	}

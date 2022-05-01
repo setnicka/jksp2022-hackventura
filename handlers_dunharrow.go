@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	secondsBetweenAttempts = 11
+	secondsBetweenAttempts = 12
 	dunharrowTimeLimit = time.Second * secondsBetweenAttempts // mezi pokusy o heslo
 )
 
@@ -47,7 +47,7 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 
 	team := server.state.GetTeam(getUser(r))
 	if time.Since(team.Dunharrow.LastTry) < dunharrowTimeLimit {
-		setFlashMessage(w, r, messageError, "Po posledním kouzle jsi stále příliš slabý. Je třeba mezi kouzly čekat alespoň 11 sekund.")
+		setFlashMessage(w, r, messageError, "Po posledním kouzle jsi stále příliš slabý. Je třeba mezi kouzly čekat alespoň 12 sekund.")
 		return
 	}
 
@@ -55,15 +55,15 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 	team.Dunharrow.LastTry = time.Now()
 	defer server.state.Save()
 
-	// e.F.g.H.i.J
+	// B1-c-D-f1-G-l
 
 	password := r.PostFormValue("password")
 	log.Infof("[Dunharrow - %s] Trying password '%s'", team.Login, password)
 
-	if len(password) < 11 {
+	if len(password) < 13 {
 		setFlashMessage(w, r, messageError, "Tvé kouzlo bylo příliš slabé, aby prolomilo kletbu. Možná zafunguje nějaké s více znaky.")
 		return
-	} else if len(password) > 11 {
+	} else if len(password) > 13 {
 		setFlashMessage(w, r, messageError, "Seslané kouzlo by zajisté bylo dost silné, jenže je tak komplikované, že se ti jej nepodařilo vyřknout správně. Zkus něco kratšího.")
 		return
 	}
@@ -82,13 +82,13 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 	letters := smallLetters + bigLetters
 	other := len(password) - letters - numbers
 
-	if letters < 3 {
+	if letters < 5 {
 		setFlashMessage(w, r, messageError, "S duchy se nic nestalo. Nejspíš je v tvém kouzle málo písmenek.")
 		return
 	}
 
-	if other < 3 {
-		setFlashMessage(w, r, messageError, "Tvé kouzlo je příliš matoucí. Nejpíše obsahuje moc písmenek a číslic.")
+	if numbers < 2 {
+		setFlashMessage(w, r, messageError, "Tvé kouzlo obsahuje málo číslic.")
 		return
 	}
 	if doubleLetters > 0 {
@@ -99,7 +99,7 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 		setFlashMessage(w, r, messageError, "Kouzlo je nestabilní. K stabilitě by pomohlo, aby bylo stejně velkých jako malých písmen.")
 		return
 	}
-	if other < numbers {
+	if other <= numbers {
 		setFlashMessage(w, r, messageError, "Duchové ti neporozuměli. Vyřkl jsi moc číslic.")
 		return
 	}
@@ -139,7 +139,7 @@ func dunharrowIndexPost(w http.ResponseWriter, r *http.Request) {
 	sauronLetters := len(reSauron.FindAll(bpassword, -1))
 
 	// heslo má málo znaků z Gandalfa.
-	if gandalfLetters < 2 {
+	if gandalfLetters < 3 {
 		setFlashMessage(w, r, messageError, "Kouzlo nezvládneš sám. Budeš potřebovat Gandalfovu pomoc. Na tu máš ale v kouzle příliš málo znaků z jeho jména.")
 		return
 	}

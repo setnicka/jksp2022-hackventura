@@ -33,6 +33,7 @@ type Team struct {
 	Erebor    ResultErebor
 	Dunharrow ResultDunharrow
 	HZP       ResultHZP
+	Village		ResultVillage
 }
 
 type result struct {
@@ -42,16 +43,15 @@ type result struct {
 }
 
 // Results for different hack pages
-
 type ResultMoria struct {
 	result
 	RightAnswers int
 }
-
 type ResultGundabad result
 type ResultRoklinka result
 type ResultErebor result
 type ResultHZP result
+type ResultVillage result
 type ResultDunharrow struct {
 	result
 	LastTry time.Time

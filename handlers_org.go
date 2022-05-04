@@ -139,6 +139,7 @@ func orgDashboardGet(w http.ResponseWriter, r *http.Request) {
 			{team.Erebor.Completed, team.Erebor.CompletedTime.Format("15:04:05"), team.Erebor.Tries},
 			{team.Dunharrow.Completed, team.Dunharrow.CompletedTime.Format("15:04:05"), team.Dunharrow.Tries},
 			{team.HZP.Completed, team.HZP.CompletedTime.Format("15:04:05"), team.HZP.Tries},
+			{team.Village.Completed, team.Village.CompletedTime.Format("15:04:05"), team.Village.Tries},
 		}}
 		data.Teams = append(data.Teams, res)
 	}

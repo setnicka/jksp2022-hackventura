@@ -60,7 +60,7 @@ var targets = []targetS{
 	{Code: "erebor", Name: "Erebor", URL: "erebor." + baseDomain, Router: ereborRouter},
 	{Code: "dunharrow", Name: "Dunharrow", URL: "dunharrow." + baseDomain, Router: dunharrowRouter},
 	{Code: "hzp", Name: "HZP", URL: "hzp." + baseDomain, Router: hzpRouter},
-	{Code: "village", Name: "Kamenná vesnice", URL: "village." + baseDomain, Router: hzpRouter},
+	{Code: "village", Name: "Kamenná vesnice", URL: "village." + baseDomain, Router: villageRouter},
 }
 
 ////////////////////////////////////////////////////////////////////////////////

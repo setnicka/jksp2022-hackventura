@@ -10,8 +10,7 @@ import (
 
 const (
 	villageFinalURL = "/village"
-	villagePassword = "heslo" // TODO: Změnit
-	villageLogin = "login" // TODO: Změnit
+	villagePassword = "hobyte"
 )
 
 func villageRouter() *chi.Mux {
@@ -54,8 +53,7 @@ func villageIndexPost(w http.ResponseWriter, r *http.Request) {
 	defer server.state.Save()
 
 	password := r.PostFormValue("password")
-	login := r.PostFormValue("login")
-	log.Infof("[Village - %s] Trying login '%s' and password '%s'", team.Login, login, password)
+	log.Infof("[Village - %s] password '%s'", team.Login, password)
 
 
 	if password == villagePassword {

@@ -11,7 +11,7 @@ import (
 const (
 	hzpLogin    = "123456789"
 	hzpPassword = "heslo"         // TODO: změnit
-	hzpName     = "Hobit Hobitný" // display in frontend
+	hzpName     = "Peckoslav Orgorád" // display in frontend
 	hzpFinalURL = "/moje-hzp"
 )
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/coreos/go-log/log"
@@ -9,8 +10,8 @@ import (
 )
 
 const (
-	hzpLogin    = "123456789"
-	hzpPassword = "heslo"         // TODO: změnit
+	hzpLogin    = "75841"
+	hzpPassword = "baltazar"
 	hzpName     = "Peckoslav Orgorád" // display in frontend
 	hzpFinalURL = "/moje-hzp"
 )
@@ -64,7 +65,7 @@ func hzpIndexPost(w http.ResponseWriter, r *http.Request) {
 	password := r.PostFormValue("password")
 	log.Infof("[HZP - %s] Trying login '%s' and password '%s'", team.Login, login, password)
 
-	if login == hzpLogin && password == hzpPassword {
+	if login == hzpLogin && strings.ToLower(password) == hzpPassword {
 		log.Infof("[HZP - %s] Completed", team.Login)
 		// Everything completed
 		team.HZP.Completed = true

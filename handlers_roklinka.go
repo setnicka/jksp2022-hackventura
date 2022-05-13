@@ -10,8 +10,8 @@ import (
 )
 
 const (
-	roklinkaLogin    = "Thurinion"        // Thurin = tajemství, ion = syn
-	roklinkaPassword = "elRoNdUvPLNOvous" // musí mít sudý počet znaků
+	roklinkaLogin    = "elrond"           // Thurin = tajemství, ion = syn
+	roklinkaPassword = "eLfofTHecavE1234" // musí mít sudý počet znaků
 	roklinkaFinalURL = "/imladris"        // sindarský název pro Roklinku
 )
 
